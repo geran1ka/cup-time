@@ -1,0 +1,42 @@
+$bigscreen: 1600px;
+$laptop: 1180px;
+$tanlet: 940px;
+$maobile: 540px;
+
+@mixin bigscreen {
+  @media (min-width: $bigscreen) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tanlet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $maobile) {
+    @content;
+  }
+}
+
+@mixin font-size($min-size, $max-size, $min-screen, $max-screen) {
+  font-size: clamp(
+    #{$min-size}px,
+    calc(
+      #{$min-size}px +
+        (
+          ($max-size - $min-size) *
+            ((100vw - #{$min-screen}px) / ($max-screen - $min-screen))
+        )
+    ),
+    #{$max-size}px
+  );
+}
