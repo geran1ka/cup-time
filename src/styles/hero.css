@@ -1,0 +1,31 @@
+.hero {
+  color: var(--white-color);
+  background-color: var(--main-color);
+}
+
+.hero__container {
+  padding-top: 210px;
+  padding-bottom: 80px;
+  background-image: url("/src/img/hero.png");
+  background-repeat: no-repeat;
+  background-position: right 113px bottom 0;
+}
+
+.hero__wrapper {
+}
+
+.hero__title {
+  font-weight: 400;
+  font-size: 88px;
+  line-height: 1.1;
+  margin-bottom: 60px;
+  max-width: 788px;
+  margin-top: 0;
+}
+
+.hero__link {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 16px 24px;
+  display: inline-block;
+}

@@ -1,6 +1,15 @@
-@use "fonts" as *;
-@use "variables" as *;
-@use "media" as *;
+@import "./fonts.css";
+
+:root {
+  --main-color: #6cb9ab;
+  --second-color: #64099b;
+  --black-color: #1d1c1d;
+  --white-color: #f2f9f7;
+
+  --font-size: 20px;
+  --font-weight: 400;
+  --line-height: 1.24;
+}
 
 html {
   overflow-x: hidden;
@@ -19,17 +28,18 @@ body {
   overflow-x: hidden;
   min-width: 320px;
   min-height: 100vh;
-  font-family: $font-family;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
-  font-size: $font-size;
-  font-weight: $font-weight;
-  line-height: $line-height;
-  color: $green;
-  background-color: $light;
+  font-family: "Inter", sans-serif;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  color: var(--black-color);
+  background-color: var(--white-color);
 }
 
 img,
@@ -93,29 +103,7 @@ iframe {
 */
 
 .container {
-  max-width: 1404px;
-  padding: 0 52px;
+  max-width: 1400px;
+  padding: 0 50px;
   margin: 0 auto;
-
-  @include bigscreen {
-    max-width: 1600px;
-    padding: 0 60px;
-  }
-
-  @include tablet {
-    padding: 0 46px;
-  }
-
-  @include mobile {
-    padding: 0 14px;
-  }
-}
-
-@include laptop {
-}
-
-@include tablet {
-}
-
-@include mobile {
 }

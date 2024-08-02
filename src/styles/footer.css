@@ -1,0 +1,133 @@
+.footer {
+  background-color: var(--main-color);
+  padding: 60px 0;
+  color: var(--white-color);
+}
+
+.footer__container {
+  display: grid;
+  gap: 38px;
+  grid-template-columns: repeat(2, max-content);
+  justify-content: space-between;
+}
+
+.footer__logo-link {
+}
+
+.footer__logo {
+}
+
+.footer__nav {
+}
+
+.footer__menu {
+  display: flex;
+  gap: 50px;
+}
+
+.footer__menu-item {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.24;
+  color: var(--white-color);
+}
+
+.footer__menu-link {
+  display: inline-block;
+  color: var(--white-color);
+  outline: none;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out,
+    border-bottom-color 0.3s ease-in-out;
+  border-bottom: 1px solid transparent;
+  outline-offset: 3px;
+}
+
+.footer__menu-link:focus-visible {
+  border-bottom-color: var(--second-color);
+}
+
+.footer__menu-link:hover {
+  color: var(--second-color);
+}
+
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.24;
+  color: var(--white-color);
+}
+
+.footer__copyright {
+}
+
+.footer__developers {
+}
+
+.footer__developer {
+}
+
+.footer__developer-link {
+  display: inline-block;
+  color: var(--white-color);
+  outline: none;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out,
+    border-bottom-color 0.3s ease-in-out;
+  border-bottom: 1px solid transparent;
+  outline-offset: 3px;
+}
+
+.footer__developer-link:focus-visible {
+  border-bottom-color: var(--second-color);
+}
+
+.footer__developer-link:hover {
+  color: var(--second-color);
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__email {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.24;
+  color: var(--white-color);
+}
+
+.footer__social-list {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__social-item {
+}
+
+.footer__social-link {
+  display: block;
+  border-radius: 50%;
+  color: var(--white-color);
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out,
+    outline-color 0.3s ease-in-out;
+  outline: 1px solid transparent;
+  outline-offset: 3px;
+}
+
+.footer__social-link:focus-visible {
+  outline-color: var(--second-color);
+}
+
+.footer__social-link:hover {
+  color: var(--second-color);
+}
+
+.footer__social-link:active {
+  color: var(--second-color);
+  transform: scale(1.4);
+}
