@@ -1,0 +1,133 @@
+.footer {
+  background-color: var(--main-color);
+  padding: 60px 0;
+  color: var(--white-color);
+
+  &__container {
+    display: grid;
+    gap: 38px;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+  }
+
+  &__logoLink {
+  }
+
+  &__logo {
+  }
+
+  &__nav {
+  }
+
+  &__menu {
+    display: flex;
+    gap: 50px;
+  }
+
+  &__menuItem {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.24;
+    color: var(--white-color);
+  }
+
+  &__menuLink {
+    display: inline-block;
+    color: var(--white-color);
+    outline: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out,
+      border-bottom-color 0.3s ease-in-out;
+    border-bottom: 1px solid transparent;
+    outline-offset: 3px;
+
+    &:focus-visible {
+      border-bottom-color: var(--second-color);
+    }
+
+    &:hover {
+      color: var(--second-color);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.24;
+    color: var(--white-color);
+  }
+
+  &__copyright {
+  }
+
+  &__developers {
+  }
+
+  &__developer {
+  }
+
+  &__developerLink {
+    display: inline-block;
+    color: var(--white-color);
+    outline: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out,
+      border-bottom-color 0.3s ease-in-out;
+    border-bottom: 1px solid transparent;
+    outline-offset: 3px;
+
+    &:focus-visible {
+      border-bottom-color: var(--second-color);
+    }
+
+    &:hover {
+      color: var(--second-color);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__email {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.24;
+    color: var(--white-color);
+  }
+
+  &__socialList {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__socialItem {
+  }
+
+  &__socialLink {
+    display: block;
+    border-radius: 50%;
+    color: var(--white-color);
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out,
+      outline-color 0.3s ease-in-out;
+    outline: 1px solid transparent;
+    outline-offset: 3px;
+
+    &:focus-visible {
+      outline-color: var(--second-color);
+    }
+
+    &:hover {
+      color: var(--second-color);
+    }
+
+    &:active {
+      color: var(--second-color);
+      transform: scale(1.4);
+    }
+  }
+}

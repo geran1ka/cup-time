@@ -1,4 +1,4 @@
-@import "./fonts.css";
+@use "./fonts.scss" as *;
 
 :root {
   --main-color: #6cb9ab;
