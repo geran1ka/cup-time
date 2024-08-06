@@ -1,3 +1,5 @@
+@use "../../styles/media" as *;
+
 .header {
   padding: 0 24px;
 
@@ -8,6 +10,11 @@
   width: 100%;
   transform: translateX(-50%);
 
+  @include laptop {
+    padding: 0 20px;
+    top: 20px;
+  }
+
   &__container {
     max-width: 1392px;
     backdrop-filter: blur(60px);
@@ -17,6 +24,10 @@
     justify-content: space-between;
     align-items: center;
     color: var(--white-color);
+
+    @include laptop {
+      padding: 12px 22px;
+    }
   }
 
   &__logoLink {
