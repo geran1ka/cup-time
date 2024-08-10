@@ -1,13 +1,25 @@
+@use "../../styles/media" as *;
+@use "../../styles/variables" as *;
+
 .footer {
-  background-color: var(--main-color);
+  background-color: $main-color;
   padding: 60px 0;
   color: var(--white-color);
+
+  @include tablet {
+    padding: 40px 0;
+  }
 
   &__container {
     display: grid;
     gap: 38px;
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
+
+    @include mobile {
+      gap: 40px;
+      grid-template-columns: 1fr;
+    }
   }
 
   &__logoLink {
@@ -23,18 +35,35 @@
   &__menu {
     display: flex;
     gap: 50px;
+
+    @include laptop {
+      gap: 32px;
+    }
+
+    @include tablet {
+      gap: 24px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      gap: 16px;
+    }
   }
 
   &__menuItem {
     font-weight: 400;
     font-size: 20px;
     line-height: 1.24;
-    color: var(--white-color);
+    color: $white-color;
+
+    @include tablet {
+      font-size: 16px;
+    }
   }
 
   &__menuLink {
     display: inline-block;
-    color: var(--white-color);
+    color: $white-color;
     outline: none;
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out,
       border-bottom-color 0.3s ease-in-out;
@@ -42,11 +71,11 @@
     outline-offset: 3px;
 
     &:focus-visible {
-      border-bottom-color: var(--second-color);
+      border-bottom-color: $second-color;
     }
 
     &:hover {
-      color: var(--second-color);
+      color: $second-color;
     }
   }
 
@@ -58,13 +87,27 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 1.24;
-    color: var(--white-color);
+    color: $white-color;
+
+    @include tablet {
+      font-size: 12px;
+    }
+
+    @include mobile {
+      order: 1;
+      gap: 12px;
+    }
   }
 
   &__copyright {
+    @include mobile {
+    }
   }
 
   &__developers {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
   }
 
   &__developer {
@@ -72,19 +115,19 @@
 
   &__developerLink {
     display: inline-block;
-    color: var(--white-color);
+    color: $white-color;
     outline: none;
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out,
+    transition: color $transition, transform $transition,
       border-bottom-color 0.3s ease-in-out;
     border-bottom: 1px solid transparent;
     outline-offset: 3px;
 
     &:focus-visible {
-      border-bottom-color: var(--second-color);
+      border-bottom-color: $second-color;
     }
 
     &:hover {
-      color: var(--second-color);
+      color: $second-color;
     }
   }
 
@@ -92,13 +135,21 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    @include tablet {
+      gap: 12px;
+    }
   }
 
   &__email {
     font-weight: 400;
     font-size: 20px;
     line-height: 1.24;
-    color: var(--white-color);
+    color: $white-color;
+
+    @include tablet {
+      font-size: 16px;
+    }
   }
 
   &__socialList {
@@ -112,22 +163,22 @@
   &__socialLink {
     display: block;
     border-radius: 50%;
-    color: var(--white-color);
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out,
+    color: $white-color;
+    transition: color $transition, transform $transition,
       outline-color 0.3s ease-in-out;
     outline: 1px solid transparent;
     outline-offset: 3px;
 
     &:focus-visible {
-      outline-color: var(--second-color);
+      outline-color: $second-color;
     }
 
     &:hover {
-      color: var(--second-color);
+      color: $second-color;
     }
 
     &:active {
-      color: var(--second-color);
+      color: $second-color;
       transform: scale(1.4);
     }
   }

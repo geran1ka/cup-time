@@ -1,0 +1,64 @@
+@use "../../styles/media" as *;
+@use "../../styles/variables" as *;
+
+.cart {
+  padding-top: 215px;
+  padding-bottom: 50px;
+
+  &__container {
+    display: grid;
+    align-items: start;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px 20px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 1.1;
+    color: $second-color;
+    grid-column: 1/-1;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  &__totalWrapper {
+    display: grid;
+    grid-template-areas: "title submit" "total submit";
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 24px;
+    background-color: $light-color;
+    color: $dark-color;
+  }
+
+  &__totalText {
+    grid-area: title;
+    font-weight: 400;
+    font-size: 20px;
+    color: $dark-color;
+  }
+
+  &__totalCount {
+    font-size: 20px;
+    color: $dark-color;
+    grid-area: total;
+  }
+
+  &__submit {
+    grid-area: submit;
+    font-weight: 400;
+    font-size: 20px;
+    color: $second-color;
+    border: 1px solid $second-color;
+    border-radius: 4px;
+    padding: 16px 24px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}

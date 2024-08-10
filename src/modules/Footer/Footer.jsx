@@ -1,17 +1,18 @@
 import classNames from "classnames";
 import s from "./Footer.module.scss";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
     <footer className={s.footer}>
       <div className={classNames("container", s.footer__container)}>
-        <a className={classNames(s.footer__logoLink, s.logo)}>
+        <Link className={classNames(s.footer__logoLink, s.logo)} to="/">
           <img
             className={s.footer__logo}
             src="img/logo.svg"
             alt="Логотип CUP TIME"
           />
-        </a>
+        </Link>
 
         <div className={s.footer__nav}>
           <ul className={s.footer__menu}>

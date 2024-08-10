@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import s from "./Card.module.scss";
+
 export const Card = ({ title, image, price }) => {
   return (
     <article className={classNames(s.products__card, s.card)}>

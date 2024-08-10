@@ -1,17 +1,17 @@
-import classNames from "classnames";
+import { Link } from "react-router-dom";
 import s from "./Header.module.scss";
 
 export const Header = () => {
   return (
     <header className={s.header}>
-      <div className={classNames("container", s.header__container)}>
-        <a className={s.header__logoLink}>
+      <div className={s.header__container}>
+        <Link className={s.header__logoLink} to="/">
           <img
             className={s.header__logo}
             src="img/logo.svg"
             alt="Логотип CUP TIME"
           />
-        </a>
+        </Link>
 
         <nav className={s.header__nav}>
           <ul className={s.header__menu}>
@@ -43,10 +43,10 @@ export const Header = () => {
           </ul>
         </nav>
 
-        <a
+        <Link
           className={s.header__cartLink}
           aria-label="Открыть корзину"
-          href="cart.html"
+          to="/cart"
         >
           <svg
             width="28"
@@ -60,7 +60,7 @@ export const Header = () => {
             <circle cx="10" cy="14.5" r="2" />
           </svg>
           <span className={s.header__cartText}>6</span>
-        </a>
+        </Link>
       </div>
     </header>
   );

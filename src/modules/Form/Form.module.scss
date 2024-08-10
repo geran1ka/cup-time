@@ -1,0 +1,54 @@
+@use "../../styles/media" as *;
+@use "../../styles/variables" as *;
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 640px;
+
+  &__input {
+    border-radius: 4px;
+    padding: 16px;
+    background-color: $light-color;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.24;
+    border: none;
+    outline: none;
+
+    &::placeholder {
+      color: #b8b8b8;
+    }
+
+    &_adress {
+      grid-column: 1/-1;
+    }
+  }
+
+  &__fieldset {
+    margin: 0;
+    padding: 12px 0 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  &__legend {
+    display: block;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.24;
+    color: $dark-color;
+    margin-bottom: 4px;
+  }
+
+  &__label {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__radio {
+  }
+}

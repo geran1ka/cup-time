@@ -1,0 +1,21 @@
+@use "../../styles/media" as *;
+@use "../../styles/variables" as *;
+
+.order {
+  padding-top: 50px;
+  padding-bottom: 100px;
+
+  &__container {
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 1.1;
+    color: $second-color;
+    margin-bottom: 32px;
+  }
+
+  &__form {
+  }
+}
