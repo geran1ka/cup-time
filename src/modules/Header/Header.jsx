@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import s from "./Header.module.scss";
+import { Container } from "../Container/Container";
 
 export const Header = () => {
   return (
     <header className={s.header}>
-      <div className={s.header__container}>
+      <Container className={s.header__container}>
         <Link className={s.header__logoLink} to="/">
           <img
             className={s.header__logo}
@@ -61,7 +62,7 @@ export const Header = () => {
           </svg>
           <span className={s.header__cartText}>6</span>
         </Link>
-      </div>
+      </Container>
     </header>
   );
 };

@@ -1,11 +1,12 @@
 import classNames from "classnames";
 import s from "./Footer.module.scss";
 import { Link } from "react-router-dom";
+import { Container } from "../Container/Container";
 
 export const Footer = () => {
   return (
     <footer className={s.footer}>
-      <div className={classNames("container", s.footer__container)}>
+      <Container className={s.footer__container}>
         <Link className={classNames(s.footer__logoLink, s.logo)} to="/">
           <img
             className={s.footer__logo}
@@ -112,7 +113,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 };

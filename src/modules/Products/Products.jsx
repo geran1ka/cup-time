@@ -1,12 +1,12 @@
 import s from "./Products.module.scss";
 import { Card } from "../Card/Card";
-import classNames from "classnames";
 import { products } from "../../products";
+import { Container } from "../Container/Container";
 
 export const Products = () => {
   return (
     <section className={s.products}>
-      <div className={classNames("container", s.products__container)}>
+      <Container className={s.products__container}>
         <h2 className={s.products__title}>Чай</h2>
 
         <ul className={s.products__list}>
@@ -16,7 +16,7 @@ export const Products = () => {
             </li>
           ))}
         </ul>
-      </div>
+      </Container>
     </section>
   );
 };

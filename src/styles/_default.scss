@@ -105,20 +105,3 @@ input[type="number"] {
 в итоге 1240px
 Чтобы контент не прижимался к краям экрана
 */
-
-.container {
-  max-width: 1400px;
-  padding-right: 50px;
-  padding-left: 50px;
-  margin: 0 auto;
-
-  @include laptop {
-    padding-right: 42px;
-    padding-left: 42px;
-  }
-
-  @include mobile {
-    padding-right: 16px;
-    padding-left: 16px;
-  }
-}
