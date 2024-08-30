@@ -1,7 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import s from "./Header.module.scss";
+import classNames from "classnames";
 
 export const Header = () => {
+  const location = useLocation();
+
+  const getActiveClass = (category) => {
+    const currentCategory = new URLSearchParams(location.search).get(
+      "category"
+    );
+
+    return currentCategory === category ? "active" : "";
+  };
   return (
     <header className={s.header}>
       <div className={s.header__container}>
@@ -16,29 +26,64 @@ export const Header = () => {
         <nav className={s.header__nav}>
           <ul className={s.header__menu}>
             <li className={s.header__menuItem}>
-              <a className={s.header__menuLink} href="#">
+              <Link
+                className={classNames(
+                  s.header__menuLink,
+                  getActiveClass("tea") === "active" &&
+                    s.header__menuLink_active
+                )}
+                to="/products?category=tea"
+              >
                 Чай
-              </a>
+              </Link>
             </li>
             <li className={s.header__menuItem}>
-              <a className={s.header__menuLink} href="#">
+              <Link
+                className={classNames(
+                  s.header__menuLink,
+                  getActiveClass("coffee") === "active" &&
+                    s.header__menuLink_active
+                )}
+                to="/products?category=coffee"
+              >
                 Кофе
-              </a>
+              </Link>
             </li>
             <li className={s.header__menuItem}>
-              <a className={s.header__menuLink} href="#">
+              <Link
+                className={classNames(
+                  s.header__menuLink,
+                  getActiveClass("teapots") === "active" &&
+                    s.header__menuLink_active
+                )}
+                to="/products?category=teapots"
+              >
                 Чайники
-              </a>
+              </Link>
             </li>
             <li className={s.header__menuItem}>
-              <a className={s.header__menuLink} href="#">
+              <Link
+                className={classNames(
+                  s.header__menuLink,
+                  getActiveClass("cezves") === "active" &&
+                    s.header__menuLink_active
+                )}
+                to="/products?category=cezves"
+              >
                 Турки
-              </a>
+              </Link>
             </li>
             <li className={s.header__menuItem}>
-              <a className={s.header__menuLink} href="#">
+              <Link
+                className={classNames(
+                  s.header__menuLink,
+                  getActiveClass("other") === "active" &&
+                    s.header__menuLink_active
+                )}
+                to="/products?category=other"
+              >
                 Прочее
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

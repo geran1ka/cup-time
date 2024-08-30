@@ -87,6 +87,10 @@
     @include tablet {
       font-size: 16px;
     }
+
+    &_active {
+      color: $second-color;
+    }
   }
 
   &__cartText {
