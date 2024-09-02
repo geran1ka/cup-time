@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useProducts } from "../../context/ProductContext";
 import { useSearchParams } from "react-router-dom";
 import { SkeletonLoader } from "../SceletonLoader/SceletonLoader";
+import { categoryRus } from "../../categoryRus";
 
 export const Products = () => {
   const [searchParams] = useSearchParams();
@@ -18,7 +19,9 @@ export const Products = () => {
   return (
     <section className={s.products}>
       <div className={classNames("container", s.products__container)}>
-        <h2 className={s.products__title}>Чай</h2>
+        <h2 className={s.products__title}>
+          {categoryRus.find((item) => item[category])[category]}
+        </h2>
 
         <ul className={s.products__list}>
           {products.length ? (

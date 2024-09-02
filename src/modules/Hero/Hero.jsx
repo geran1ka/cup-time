@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import s from "./Hero.module.scss";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -8,9 +9,9 @@ export const Hero = () => {
         <div className={s.hero__wrapper}>
           <h1 className={s.hero__title}>Попробуй новый вкус Арабики</h1>
 
-          <a className={s.hero__link} href="#">
+          <Link className={s.hero__link} to="/products?category=coffee">
             Перейти к кофе
-          </a>
+          </Link>
         </div>
       </div>
     </section>

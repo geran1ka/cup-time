@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import s from "./Cart.module.scss";
-import { products } from "../../products";
 import { CartItem } from "../CartItem/CartItem";
 import { useCart } from "../../context/CartContext";
 import { SkeletonLoader } from "../SceletonLoader/SceletonLoader";
@@ -10,8 +9,6 @@ export const Cart = () => {
 
   const totalPrice = cart
     ? cart.reduce((acc, item) => {
-        console.log("item: ", item);
-
         return acc + item.price * item.quantity;
       }, 0)
     : 0;
