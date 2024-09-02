@@ -1,9 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import s from "./Header.module.scss";
 import classNames from "classnames";
+import { useCart } from "../../context/CartContext";
 
 export const Header = () => {
   const location = useLocation();
+  const { cart } = useCart();
 
   const getActiveClass = (category) => {
     const currentCategory = new URLSearchParams(location.search).get(
@@ -104,7 +106,7 @@ export const Header = () => {
             <circle cx="18" cy="14.5" r="2" />
             <circle cx="10" cy="14.5" r="2" />
           </svg>
-          <span className={s.header__cartText}>6</span>
+          <span className={s.header__cartText}>{cart ? cart.length : 0}</span>
         </Link>
       </div>
     </header>
