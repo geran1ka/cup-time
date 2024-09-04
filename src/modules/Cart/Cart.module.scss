@@ -133,6 +133,22 @@
     padding: 16px 24px;
     background-color: transparent;
     cursor: pointer;
+    transition: color $transition, border-color $transition,
+      background-color $transition;
+
+    &:hover {
+      border-color: #7308b5;
+      background-color: $white-color;
+    }
+
+    &:active {
+      border-color: $main-color;
+      color: $main-color;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
 
     @include tablet {
       padding: 12px 18px;
@@ -141,6 +157,84 @@
 
     @include mobile {
       justify-self: end;
+    }
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  border: 6px;
+  background-color: $white-color;
+  border-radius: 20px;
+
+  @include tablet {
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  @include mobile {
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  &__overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+  }
+
+  &__title {
+    font-size: 36px;
+    text-align: center;
+
+    @include tablet {
+      max-width: 395px;
+
+      font-size: 24px;
+    }
+
+    @include mobile {
+      max-width: 265px;
+      font-size: 16px;
+    }
+  }
+
+  &__btn {
+    background-color: $second-color;
+    color: $white-color;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: background-color $transition;
+
+    &:hover {
+      background-color: $main-color;
+    }
+
+    @include tablet {
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+      padding: 6px 10px;
+      border-radius: 6px;
     }
   }
 }
