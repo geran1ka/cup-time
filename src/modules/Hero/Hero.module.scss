@@ -6,6 +6,7 @@
   background-color: $main-color;
 
   &__container {
+    min-height: 600px;
     padding-top: 210px;
     padding-bottom: 80px;
     background-image: url("/src/img/hero.png");
@@ -13,6 +14,8 @@
     background-position: right 113px bottom 0;
 
     @include laptop {
+      min-height: 484px;
+
       padding-top: 172px;
       padding-bottom: 60px;
       background-image: url("/src/img/hero-1024.png");
@@ -25,7 +28,7 @@
     }
 
     @include mobile {
-      min-height: auto;
+      min-height: 420px;
       padding-top: 90px;
       padding-bottom: 250px;
       background-size: 145px;

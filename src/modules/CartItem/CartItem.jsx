@@ -1,10 +1,32 @@
 import classNames from "classnames";
 import s from "./CartItem.module.scss";
+import { API_URL } from "../../const";
+import { useCart } from "../../context/CartContext";
+import { useState } from "react";
 
-export const CartItem = ({ className, title, image, price }) => {
+export const CartItem = ({ className, id, title, img, price, quantity }) => {
+  const [itemQuantity, setItemQuantity] = useState(quantity);
+  const { updateQuantity, removeFromCart } = useCart();
+
+  const handleDecrease = () => {
+    const newQuantity = itemQuantity - 1;
+    if (newQuantity > 0) {
+      setItemQuantity(newQuantity);
+      updateQuantity(id, newQuantity);
+    } else {
+      removeFromCart(id);
+    }
+  };
+
+  const handleEncrease = () => {
+    const newQuantity = itemQuantity + 1;
+    setItemQuantity(newQuantity);
+    updateQuantity(id, newQuantity);
+  };
+
   return (
     <li className={classNames(className && className, s.cartItem)}>
-      <img className={s.cartItem__img} src={image} alt={title} />
+      <img className={s.cartItem__img} src={`${API_URL}${img}`} alt={title} />
 
       <div className={s.cartItem__content}>
         <h3 className={s.cartItem__title}>{title}</h3>
@@ -12,6 +34,7 @@ export const CartItem = ({ className, title, image, price }) => {
         <div className={s.cartItem__countWrapper}>
           <button
             className={classNames(s.cartItem__btn, s.cartItem__btn_minus)}
+            onClick={handleDecrease}
           >
             <svg
               width="12"
@@ -23,8 +46,16 @@ export const CartItem = ({ className, title, image, price }) => {
               <rect width="12" height="2" />
             </svg>
           </button>
-          <input className={s.cartItem__count} type="number" value={1} />
-          <button className={classNames(s.cartItem__btn, s.cartItem__btn_plus)}>
+          <input
+            className={s.cartItem__count}
+            type="number"
+            value={quantity}
+            readOnly
+          />
+          <button
+            className={classNames(s.cartItem__btn, s.cartItem__btn_plus)}
+            onClick={handleEncrease}
+          >
             <svg
               width="12"
               height="12"
@@ -43,7 +74,7 @@ export const CartItem = ({ className, title, image, price }) => {
             </svg>
           </button>
         </div>
-        <p className={s.cartItem__price}>{price}&nbsp;₽</p>
+        <p className={s.cartItem__price}>{price * quantity}&nbsp;₽</p>
       </div>
     </li>
   );

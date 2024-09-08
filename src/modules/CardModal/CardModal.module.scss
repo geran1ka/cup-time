@@ -1,0 +1,215 @@
+@use "../../styles/media" as *;
+@use "../../styles/variables" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  overflow-y: auto;
+
+  @include mobile {
+    padding: 15px;
+  }
+}
+
+.modal {
+  max-width: 744px;
+  width: 100%;
+  margin: auto;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #f2f9f7;
+  display: flex;
+  position: relative;
+
+  @include tablet {
+    max-width: 524px;
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.image {
+  width: 45%;
+  object-fit: cover;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.content {
+  width: 55%;
+  padding: 40px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  @include tablet {
+    padding: 24px 24px 16px;
+    gap: 31px;
+  }
+
+  @include mobile {
+    width: 100%;
+    gap: 17px;
+  }
+}
+
+.header {
+  max-width: 320px;
+
+  @include tablet {
+    max-width: 230px;
+  }
+}
+
+.title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.24;
+  color: #1d1c1d;
+  margin-bottom: 12px;
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  @include tablet {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+}
+
+.price {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.24;
+  color: #1d1c1d;
+
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.field {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.24;
+  color: #b8b8b8;
+
+  @include tablet {
+    font-size: 12px;
+  }
+}
+
+.value {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.24;
+  color: #1d1c1d;
+  text-align: right;
+
+  @include tablet {
+    font-size: 12px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.count {
+  display: flex;
+  gap: 4px;
+
+  @include tablet {
+    display: flex;
+    gap: 2px;
+  }
+}
+
+.btn {
+  background-color: transparent;
+  width: 36px;
+  height: 36px;
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+
+  @include tablet {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.number {
+  width: 26px;
+  font-size: 20px;
+  text-align: center;
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  @include tablet {
+    font-size: 16px;
+  }
+}
+
+.btnAddCart {
+  border: 1px solid #64099b;
+  border-radius: 4px;
+  padding: 16px 24px;
+  font-size: 20px;
+  line-height: 1.24;
+  color: #64099b;
+  background-color: transparent;
+
+  @include tablet {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+}
+
+.btnCloseCard {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: block;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
+
+  @include tablet {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: block;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    line-height: 0;
+  }
+}
