@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useOrder } from "../../context/OrderContext";
 import { API_URL } from "../../const";
 import Modal from "react-modal";
+import { Container } from "../Container/Container";
 
 Modal.setAppElement("#root");
 
@@ -62,7 +63,7 @@ export const Cart = () => {
 
   return (
     <section className={s.cart}>
-      <div className={classNames("container", s.cart__container)}>
+      <Container className={s.cart__container}>
         <h2 className={s.cart__title}>Корзина ({cart ? cart.length : 0})</h2>
         <ul className={s.cart__list}>
           {cart ? (
@@ -86,7 +87,7 @@ export const Cart = () => {
             Заказать
           </button>
         </div>
-      </div>
+      </Container>
 
       <Modal
         className={s.modal}
